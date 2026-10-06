@@ -1,0 +1,154 @@
+[
+  {
+    "name": "Tokyo, Japan (A573)",
+    "server": "https://librespeed.a573.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Amsterdam, Netherlands (Sharktech)",
+    "server": "https://amsspeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Amsterdam, Netherlands (Clouvider)",
+    "server": "https://ams.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Argalasti, Magnesia, Greece (Cosmote)",
+    "server": "https://argalasti.skoultsos.eu/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Atlanta, United States (Clouvider)",
+    "server": "https://atl.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Belgrade, Serbia (SOX)",
+    "server": "https://speedtest1.sox.rs/librespeed/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Chicago, USA (Sharktech)",
+    "server": "https://chispeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Denver, USA (Sharktech)",
+    "server": "https://denspeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Frankfurt, Germany (Clouvider)",
+    "server": "https://fra.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Frankfurt, Germany (FS IT-Systeme GmbH)",
+    "server": "https://speed.fs-it.systems/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Grand Rapids, Michigan (RackGenius)",
+    "server": "https://mispeed.rackgenius.com/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Las Vegas, USA (Sharktech)",
+    "server": "https://lasspeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "London, England (Clouvider)",
+    "server": "https://lon.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Los Angeles, United States (1) (Clouvider)",
+    "server": "https://la.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Los Angeles, USA (Sharktech)",
+    "server": "https://laxspeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "New York, United States (2) (Clouvider)",
+    "server": "https://nyc.speedtest.clouvider.net/backend/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Poznan, Poland (INEA)",
+    "server": "https://speedtest.kamilszczepanski.com/",
+    "dlURL": "garbage.php",
+    "ulURL": "empty.php",
+    "pingURL": "empty.php",
+    "getIpURL": "getIP.php"
+  },
+  {
+    "name": "Prague, Czech Republic (CESNET)",
+    "server": "https://speedtest.cesnet.cz/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Prague, Czech Republic (Turris)",
+    "server": "https://librespeed.turris.cz/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  }
+]

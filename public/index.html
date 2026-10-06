@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7f5">
+  <meta name="description" content="Get a clearer picture of your connection with Bilis. Measure download speed, upload speed, and latency in one simple test.">
+  <title>Bilis — Your connection, at a glance</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="vendor/librespeed/speedtest.js" defer></script>
+  <script src="js/client-info.js" defer></script>
+  <script src="js/speedtest.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Bilis home"><span class="brand-mark">ϟ</span>bilis<span class="brand-period">.</span></a>
+    <span class="header-label">A little clarity for your connection.</span>
+    <a class="header-link" href="#how-it-works">How it works <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="page">
+    <div class="intro">
+      <div><p class="eyebrow"><span class="tiny-line"></span> KNOW YOUR CONNECTION</p><h1>Life moves fast.<br>Does your internet?</h1><p class="intro-copy">A simple speed test. A clearer picture. Let’s see what your connection can do.</p></div>
+      <div class="intro-note"><span class="sparkle" aria-hidden="true">✳</span><p>Less guessing.<br><strong>More knowing.</strong></p></div>
+    </div>
+    <section class="test-card" aria-label="Connection speed test">
+      <div class="card-top"><span class="section-label">YOUR SPEED, IN REAL TIME</span><span class="status-pill" id="statusPill"><span id="statusDot" class="status-dot"></span><span id="status" role="status">Ready to test</span></span></div>
+      <div class="test-layout">
+        <div class="gauge-panel">
+          <div class="gauge" id="speedGauge" data-direction="download">
+            <svg viewBox="0 0 360 225" aria-hidden="true"><path class="gauge-track" d="M 35 185 A 145 145 0 0 1 325 185"/><path id="gaugeArc" class="gauge-arc" pathLength="100" d="M 35 185 A 145 145 0 0 1 325 185"/><g class="gauge-labels"><text x="31" y="216">0</text><text x="47" y="97">10</text><text x="173" y="22">100</text><text x="297" y="97">500</text><text x="308" y="216">1k+</text></g></svg>
+            <div class="gauge-value"><span class="gauge-caption"><span id="heroIcon" aria-hidden="true">↓</span><span id="heroLabel">DOWNLOAD SPEED</span></span><strong id="downHero">—</strong><span class="gauge-unit">Mbps</span></div>
+          </div>
+          <p class="phase" id="phase" role="status">Your next speed check starts here.</p>
+          <div class="progress-track" role="progressbar" aria-label="Test progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressTrack"><div id="progress"></div></div>
+          <div class="test-actions"><button id="startBtn" class="primary-button"><span id="buttonLabel">Start speed test</span><span aria-hidden="true">↗</span></button><button id="cancelBtn" class="cancel-button" hidden>Cancel test</button></div>
+          <p class="data-note">Data usage varies with your speed. No sign-up needed.</p>
+        </div>
+        <div class="metrics-panel">
+          <article class="metric" id="downloadMetric"><div class="metric-icon download-icon" aria-hidden="true">↓</div><div class="metric-info"><h2>Download</h2><p>How fast you receive data</p></div><div class="metric-value"><strong id="down">—</strong><span>Mbps</span></div></article>
+          <article class="metric" id="uploadMetric"><div class="metric-icon upload-icon" aria-hidden="true">↑</div><div class="metric-info"><h2>Upload</h2><p>How fast you send data</p></div><div class="metric-value"><strong id="up">—</strong><span>Mbps</span></div></article>
+          <article class="metric" id="pingMetric"><div class="metric-icon ping-icon" aria-hidden="true">⇄</div><div class="metric-info"><h2>Ping</h2><p>How quickly your connection responds</p></div><div class="metric-value"><strong id="ping">—</strong><span>ms</span></div></article>
+          <div class="connection-info client-info"><span class="connection-symbol" aria-hidden="true">◉</span><div><span class="section-label">YOUR PUBLIC IPv4</span><div class="client-ip-row"><p id="clientIp" role="status">Detecting…</p><button id="retryIp" class="ip-retry" type="button" hidden>Retry</button></div><small>Your connection’s address on the internet</small></div></div>
+          <div class="connection-info"><span class="connection-symbol" aria-hidden="true">◎</span><div><label class="section-label" for="serverSelect">SERVER</label><select id="serverSelect" class="server-select" disabled><option value="auto">Automatic (best latency)</option></select><p id="serverHost" aria-live="polite">Automatic selection</p><small id="serverHint">Measured between your device and this server</small></div></div>
+        </div>
+      </div>
+      <div class="card-bottom"><span><span class="privacy-icon" aria-hidden="true">◇</span> Your test data is never stored on our server.</span><details class="test-details"><summary>Test details</summary><pre id="log">Run a test to see the details.</pre></details></div>
+    </section>
+    <section class="understanding" id="how-it-works">
+      <div class="understanding-heading"><p class="eyebrow">THE NUMBERS, EXPLAINED</p><h2>A few numbers.<br> A lot more clarity.</h2><p>Here’s what your results mean<br> for your everyday internet.</p></div>
+      <article class="explanation"><span class="explanation-tag">01 / DOWNLOAD</span><h3>Stream. Scroll. Play.</h3><p>Download speed affects how quickly videos load, pages open, and files arrive. Higher is faster.</p><span class="explanation-foot">Measured in megabits per second <span>↘</span></span></article>
+      <article class="explanation"><span class="explanation-tag">02 / UPLOAD</span><h3>Send without the wait.</h3><p>Upload speed matters for video calls, sharing photos, and sending files to the cloud. Higher is faster.</p><span class="explanation-foot">Measured in megabits per second <span>↗</span></span></article>
+      <article class="explanation"><span class="explanation-tag">03 / PING</span><h3>Stay in the moment.</h3><p>Ping is the time it takes for a response. A lower number means less delay in games and conversations.</p><span class="explanation-foot">Measured in milliseconds <span>↔</span></span></article>
+    </section>
+    <div class="result-note"><span aria-hidden="true">ⓘ</span><p>A snapshot, not a promise. Results vary with Wi-Fi, device load, and server location. Testing against a local server measures your local connection.</p></div>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="./">bilis<span class="brand-period">.</span></a><span>Less waiting. More living.</span><span class="footer-note">Simple by design.</span></footer>
+</body>
+</html>
