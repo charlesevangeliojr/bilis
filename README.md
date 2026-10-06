@@ -159,6 +159,12 @@ samples, 20 MiB upload blobs.
 
 ## 6. Deploy (Apache / Nginx + PHP-FPM)
 
+For InfinityFree with the whole project inside `htdocs`, follow
+[the InfinityFree upload instructions](deploy/INFINITYFREE.md). Run
+`powershell -ExecutionPolicy Bypass -File scripts/package-infinityfree.ps1`
+to create `dist/bilis-infinityfree.zip`, including the root rewrite rules and
+the shared-hosting configuration for `public/`.
+
 Point the document root at `public/` and keep compression/buffering off so the
 server never becomes the bottleneck:
 
@@ -167,8 +173,10 @@ server never becomes the bottleneck:
   per-endpoint `PHP_VALUE` limits, `access_log off`, block non-API PHP.
 - `deploy/apache-bilis.conf:1` — `LimitRequestBody 0`, `no-gzip` on `/api/`,
   loosened `mod_reqtimeout`, PHP-FPM via `proxy:fcgi`, PHP upload limits.
-- Shared hosting / XAMPP: `public/.htaccess` + `public/.user.ini` carry the same
-  intent (`LimitRequestBody 0`, `no-gzip`, `post_max_size 150M`).
+- Shared hosting: `public/.htaccess` uses only `DirectoryIndex index.html`.
+  For Apache hosts that allow server tuning, the optional
+  `deploy/apache-public.htaccess` + `public/.user.ini` provide
+  `LimitRequestBody 0`, `no-gzip`, and `post_max_size 150M`.
 - Give PHP enough workers for 6 download + 3 upload parallel streams. The PHP
   dev server is single-threaded — fine for functional checks, wrong for
   benchmarking (local mode auto-drops to 1 stream there).

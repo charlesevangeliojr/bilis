@@ -1,0 +1,13 @@
+# Upload this file alongside public/, config/, and src/ inside htdocs.
+RewriteEngine On
+
+# Private files must never be reachable through the web.
+RewriteRule (^|/)\. - [F,L]
+RewriteRule ^(?:config|src|deploy|scripts)(?:/|$) - [F,L,NC]
+
+# Stop rewriting when the request has already reached public/.
+RewriteRule ^public(?:/|$) - [L]
+
+# Keep the browser URL at the site root; serve only the public directory.
+RewriteRule ^$ public/index.html [L]
+RewriteRule ^(.*)$ public/$1 [L]

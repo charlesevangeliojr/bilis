@@ -1,0 +1,2 @@
+# Minimal shared-hosting profile. Use as public/.htaccess on InfinityFree.
+DirectoryIndex index.html
