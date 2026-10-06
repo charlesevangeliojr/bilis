@@ -8,14 +8,6 @@
     "getIpURL": "backend/getIP.php"
   },
   {
-    "name": "Amsterdam, Netherlands (Sharktech)",
-    "server": "https://amsspeed.sharktech.net/",
-    "dlURL": "backend/garbage.php",
-    "ulURL": "backend/empty.php",
-    "pingURL": "backend/empty.php",
-    "getIpURL": "backend/getIP.php"
-  },
-  {
     "name": "Amsterdam, Netherlands (Clouvider)",
     "server": "https://ams.speedtest.clouvider.net/backend/",
     "dlURL": "garbage.php",
@@ -24,7 +16,15 @@
     "getIpURL": "getIP.php"
   },
   {
-    "name": "Argalasti, Magnesia, Greece (Cosmote)",
+    "name": "Amsterdam, Netherlands (Sharktech)",
+    "server": "https://amsspeed.sharktech.net/",
+    "dlURL": "backend/garbage.php",
+    "ulURL": "backend/empty.php",
+    "pingURL": "backend/empty.php",
+    "getIpURL": "backend/getIP.php"
+  },
+  {
+    "name": "Argalasti, Magnesia, Greece (Cosmote) (skoultsos.eu)",
     "server": "https://argalasti.skoultsos.eu/",
     "dlURL": "backend/garbage.php",
     "ulURL": "backend/empty.php",
@@ -40,7 +40,7 @@
     "getIpURL": "getIP.php"
   },
   {
-    "name": "Belgrade, Serbia (SOX)",
+    "name": "Belgrade, Serbia (SOX) (Serbian Open eXchange)",
     "server": "https://speedtest1.sox.rs/librespeed/",
     "dlURL": "backend/garbage.php",
     "ulURL": "backend/empty.php",
@@ -128,7 +128,7 @@
     "getIpURL": "getIP.php"
   },
   {
-    "name": "Poznan, Poland (INEA)",
+    "name": "Poznan, Poland (INEA) (Kamil Szczepański)",
     "server": "https://speedtest.kamilszczepanski.com/",
     "dlURL": "garbage.php",
     "ulURL": "empty.php",

@@ -11,7 +11,7 @@ if ($file === false || !str_starts_with($file, $root . DIRECTORY_SEPARATOR) || !
     return true;
 }
 $extension = pathinfo($file, PATHINFO_EXTENSION);
-$types = ['html' => 'text/html; charset=utf-8', 'css' => 'text/css; charset=utf-8', 'js' => 'text/javascript; charset=utf-8', 'svg' => 'image/svg+xml'];
+$types = ['html' => 'text/html; charset=utf-8', 'css' => 'text/css; charset=utf-8', 'js' => 'text/javascript; charset=utf-8', 'svg' => 'image/svg+xml', 'webmanifest' => 'application/manifest+json', 'png' => 'image/png', 'apk' => 'application/vnd.android.package-archive'];
 if (!isset($types[$extension]) && !in_array($path, ['/api/ping.php', '/api/download.php', '/api/upload.php', '/api/settings.php'], true)) {
     http_response_code(404);
     echo 'Not found';

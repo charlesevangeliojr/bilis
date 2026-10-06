@@ -1,9 +1,32 @@
 # Deploy Bilis on InfinityFree
 
-1. Run `powershell -ExecutionPolicy Bypass -File scripts/package-infinityfree.ps1`.
-2. Extract `dist/bilis-infinityfree.zip` on your computer.
+## PWA installation limitation
+
+InfinityFree's free-hosting security system prevents full PWA installation.
+The live `bilis.infinityfree.me` manifest and service-worker URLs returned
+HTML JavaScript/cookie challenge pages to requests without a browser session
+on 2026-10-06. Chrome's installation process cannot use those responses as app
+files. A live Chrome check on the same date reported a manifest syntax error
+at line 1, column 1 and no active service worker. The resulting missing name,
+start URL, and icon errors follow from the manifest not being parsed; adding
+more icon declarations does not address the cause.
+Changing MIME types or rewriting the URLs does not remove this layer.
+See [InfinityFree's PWA support explanation](https://forum.infinityfree.com/t/pwa-manifest-error/101077/2).
+
+The mobile invitation still opens automatically. On this host it offers a
+home-screen shortcut through Chrome's menu, rather than promising full app
+installation. A shortcut opens in the browser. Full PWA installation requires
+serving the app over HTTPS from hosting without this challenge on its files.
+The relative manifest URLs allow the same build to work on another domain.
+
+## Upload instructions
+
+1. Create your own ZIP containing only the root `.htaccess`, `public/`,
+   `config/`, and `src/`. Omit `public/.user.ini` for this host.
+2. Keep `dist/`, `android/`, `scripts/`, `deploy/`, `.git/`, `router.php`, and
+   `run.ps1` out of the ZIP. In particular, never upload Android signing keys.
 3. In InfinityFree's File Manager, open this domain's `htdocs` folder.
-4. Upload the **contents** of the extracted `htdocs` folder into it:
+4. Upload and extract the ZIP so these files sit directly inside `htdocs`:
 
    ```text
    htdocs/

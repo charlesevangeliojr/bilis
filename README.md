@@ -160,10 +160,10 @@ samples, 20 MiB upload blobs.
 ## 6. Deploy (Apache / Nginx + PHP-FPM)
 
 For InfinityFree with the whole project inside `htdocs`, follow
-[the InfinityFree upload instructions](deploy/INFINITYFREE.md). Run
-`powershell -ExecutionPolicy Bypass -File scripts/package-infinityfree.ps1`
-to create `dist/bilis-infinityfree.zip`, including the root rewrite rules and
-the shared-hosting configuration for `public/`.
+[the InfinityFree upload instructions](deploy/INFINITYFREE.md). Create your
+own ZIP containing only the root `.htaccess`, `public/`, `config/`, and `src/`.
+Omit `public/.user.ini` on InfinityFree. Keep developer files, `dist/`, `.git/`,
+and the Android source/signing keys out of the upload.
 
 Point the document root at `public/` and keep compression/buffering off so the
 server never becomes the bottleneck:
@@ -183,11 +183,36 @@ server never becomes the bottleneck:
 
 ## 7. Verification
 
+### Dark mode and installed app
+
+The header theme button remembers your choice locally; otherwise Bilis follows
+your device's light/dark setting. Mobile visitors see an install modal with a
+native install button when supported, or instructions for their browser.
+Phone detection includes Android/iOS devices in landscape and small screens.
+The modal has an Install Bilis button: it opens the native prompt when
+available, otherwise it shows installation steps. On InfinityFree it offers
+a home-screen shortcut, because its security system prevents full PWA installation.
+Dismissing hides the invitation until the page is reloaded; the header button
+can reopen it anytime.
+Installed apps do not show the invitation.
+`public/manifest.webmanifest` and `public/sw.js`
+provide installation and offline app-shell support. Speed tests and IP detection
+still require a connection; measurement requests and API responses are never
+cached. Serve the app over HTTPS (localhost works for development). Supported
+browsers show an Install app button when installation is available; on iPhone,
+use Safari's Share menu and Add to Home Screen.
+
+Upload the new manifest, service worker, `icons/`, JavaScript, HTML, and CSS
+together. Increment the cache version in `public/sw.js` (currently
+`bilis-shell-v6`) when changing the offline asset list. Existing open app windows use the current worker
+until closed, allowing updates without interrupting an active test.
+
 ```powershell
 php -l router.php
 node --check public/js/speedtest.js
 node --check public/speedtest_worker.js
 node scripts/check-browser.cjs
+node scripts/check-pwa.cjs
 ```
 
 Lint PHP under `public/api/`, `config/`, `src/` too. `scripts/check-browser.cjs`
@@ -198,6 +223,9 @@ before/during transfer, HTTP-failure recovery, auto-selection, 6× download /
 3× upload parallelism, overflow, reduced motion, and JS exceptions (previews in
 `scripts/`). `node scripts/check-public.cjs` (separate profile, port 9223) is the
 optional real-internet check against public backends and consumes test bandwidth.
+`scripts/check-pwa.cjs` uses the same local Chrome session to check theme
+persistence, installability, offline reload, and exclusion of API traffic from
+the offline cache.
 
 ## 8. License
 

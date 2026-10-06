@@ -182,6 +182,67 @@ function update(run, data) {
   }
 }
 $('serverHost').textContent = 'Automatic selection';
+
+async function runWebViewFallback(run) {
+  const ep = (path) => new URL(path, document.baseURI).href;
+  const pingUrl = ep('api/ping.php?empty=1');
+  const dlUrl = ep('api/download.php');
+  const ulUrl = ep('api/upload.php');
+  const sizes = window.innerWidth < 768 ? [512 * 1024, 256 * 1024] : [10 * 1024 * 1024, 5 * 1024 * 1024];
+
+  setPhase('ping', 'Measuring latency and connection stability…');
+  const times = [];
+  for (let i = 0; i < 5; i++) {
+    const t0 = performance.now();
+    const res = await fetch(`${pingUrl}&r=${Math.random()}`, { cache: 'no-store', signal: run.controller.signal });
+    if (!res.ok) throw new Error(`Server returned HTTP ${res.status}.`);
+    times.push(performance.now() - t0);
+    setProgress((i / 5) * 15);
+  }
+  times.sort((a, b) => a - b);
+  const ping = times[Math.floor(times.length / 2)];
+  $('ping').textContent = ping.toFixed(0);
+  log(`Ping: ${ping.toFixed(1)} ms`);
+  setProgress(15);
+
+  setPhase('download', 'Measuring sustained download speed…');
+  setGaugeMode('download');
+  const t0d = performance.now();
+  let received = 0;
+  const rdl = await fetch(`${dlUrl}?bytes=${sizes[0]}&r=${Math.random()}`, { cache: 'no-store', signal: run.controller.signal });
+  if (!rdl.ok) throw new Error(`Server returned HTTP ${rdl.status}.`);
+  const reader = rdl.body.getReader();
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    received += value.length;
+    const sec = (performance.now() - t0d) / 1000;
+    if (sec > 0) $('down').textContent = ((received * 8) / sec / 1e6).toFixed(1);
+    setProgress(15 + Math.min(45, (received / sizes[0]) * 45));
+  }
+  const down = (received * 8) / ((performance.now() - t0d) / 1000) / 1e6;
+  $('down').textContent = down.toFixed(1);
+  $('downHero').textContent = down.toFixed(1);
+  log(`Download: ${down.toFixed(1)} Mbps`);
+  setProgress(60);
+
+  setPhase('upload', 'Measuring sustained upload speed…');
+  setGaugeMode('upload');
+  const payload = new Uint8Array(sizes[1]);
+  crypto.getRandomValues(payload);
+  const t0u = performance.now();
+  const rul = await fetch(`${ulUrl}?r=${Math.random()}`, {
+    method: 'POST', body: payload, cache: 'no-store', headers: { 'Content-Type': 'application/octet-stream' }, signal: run.controller.signal,
+  });
+  if (!rul.ok) throw new Error(`Server returned HTTP ${rul.status}.`);
+  await rul.json();
+  const up = (sizes[1] * 8) / ((performance.now() - t0u) / 1000) / 1e6;
+  $('up').textContent = up.toFixed(1);
+  $('downHero').textContent = up.toFixed(1);
+  log(`Upload: ${up.toFixed(1)} Mbps`);
+  setProgress(100);
+  finish(run, 'complete', 'All done. Your connection, at a glance.');
+}
 $('serverSelect').addEventListener('change', () => {
   const select = $('serverSelect');
   $('serverHost').textContent = select.value === 'auto' ? 'Automatic selection' : select.selectedOptions[0].textContent;
@@ -214,7 +275,7 @@ $('startBtn').addEventListener('click', async () => {
   setStatus('Preparing test');
   $('phase').textContent = 'Checking the test server…';
   try {
-    if (typeof Speedtest !== 'function' || !window.Worker) throw new Error('The LibreSpeed engine could not load or this browser does not support Web Workers.');
+    if (typeof Speedtest !== 'function') throw new Error('The LibreSpeed engine could not load.');
     const settings = await (await request(run, endpoint('api/settings.php'))).json();
     if (!Array.isArray(settings.servers) || !settings.parameters) throw new Error('Invalid test configuration.');
     if (activeRun !== run) return;
@@ -227,6 +288,11 @@ $('startBtn').addEventListener('click', async () => {
       xhr_ignoreErrors: 0, url_dl: endpoint('api/download.php'),
       url_ul: endpoint('api/upload.php'), url_ping: endpoint('api/ping.php?empty=1'),
     })) engine.setParameter(key, value);
+    if (!window.Worker) {
+      log('Web Workers are not available in this WebView; using direct PHP endpoints.');
+      await runWebViewFallback(run);
+      return;
+    }
     if (run.selection !== 'local' && settings.servers.length) {
       const manual = run.selection !== 'auto';
       const candidates = manual ? settings.servers.filter(server => serverKey(server) === run.selection) : settings.servers;
