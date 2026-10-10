@@ -1,0 +1,680 @@
+{
+  "checkedAt": "2026-10-10T03:15:33.766Z",
+  "sources": [
+    "https://librespeed.org/backend-servers/servers.php",
+    "https://raw.githubusercontent.com/librespeed/speedtest/master/server-list.json"
+  ],
+  "origin": "https://bilis.example",
+  "configured": 19,
+  "retained": 19,
+  "added": 0,
+  "verified": 19,
+  "philippines": 0,
+  "configurationUpdated": true,
+  "sourceFailures": [],
+  "results": [
+    {
+      "server": {
+        "name": "Tokyo, Japan (A573)",
+        "server": "https://librespeed.a573.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Amsterdam, Netherlands (Sharktech)",
+        "server": "https://amsspeed.sharktech.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Amsterdam, Netherlands (Clouvider)",
+        "server": "https://ams.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Atlanta, United States (Clouvider)",
+        "server": "https://atl.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Belgrade, Serbia (SOX) (Serbian Open eXchange)",
+        "server": "https://speedtest1.sox.rs/librespeed/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Argalasti, Magnesia, Greece (Cosmote) (skoultsos.eu)",
+        "server": "https://argalasti.skoultsos.eu/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Chicago, USA (Sharktech)",
+        "server": "https://chispeed.sharktech.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Denver, USA (Sharktech)",
+        "server": "https://denspeed.sharktech.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Frankfurt, Germany (Clouvider)",
+        "server": "https://fra.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Frankfurt, Germany (FS IT-Systeme GmbH)",
+        "server": "https://speed.fs-it.systems/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Las Vegas, USA (Sharktech)",
+        "server": "https://lasspeed.sharktech.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "London, England (Clouvider)",
+        "server": "https://lon.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Grand Rapids, Michigan (RackGenius)",
+        "server": "https://mispeed.rackgenius.com/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Los Angeles, United States (1) (Clouvider)",
+        "server": "https://la.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Los Angeles, USA (Sharktech)",
+        "server": "https://laxspeed.sharktech.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Prague, Czech Republic (CESNET)",
+        "server": "https://speedtest.cesnet.cz/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "New York, United States (2) (Clouvider)",
+        "server": "https://nyc.speedtest.clouvider.net/backend/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Prague, Czech Republic (Turris)",
+        "server": "https://librespeed.turris.cz/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Poznan, Poland (INEA) (Kamil Szczepański)",
+        "server": "https://speedtest.kamilszczepanski.com/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true,
+        "upload": true
+      },
+      "previouslyConfigured": true
+    },
+    {
+      "server": {
+        "name": "Amsterdam, Netherlands (Rust backend) (Sudo Dios)",
+        "server": "https://librespeed-rs.ir/",
+        "dlURL": "backend/garbage",
+        "ulURL": "backend/empty",
+        "pingURL": "backend/empty",
+        "getIpURL": "backend/getIP"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Bari, Italy (Consortium GARR)",
+        "server": "https://st-be-ba1.infra.garr.it/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Bologna, Italy (Consortium GARR)",
+        "server": "https://st-be-bo1.infra.garr.it/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Novi Sad, Vojvodina, Serbia (E-CAPS.net)",
+        "server": "https://speed1.e-caps.net/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "Ping/CORS incompatible",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Bangalore, India (DigitalOcean)",
+        "server": "https://in1.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Helsinki, Finland (3) (Hetzner) (Daily Health Insurance Group)",
+        "server": "https://finew.openspeed.org/",
+        "dlURL": "backend437/garbage.php",
+        "ulURL": "backend437/empty.php",
+        "pingURL": "backend437/empty.php",
+        "getIpURL": "backend437/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Helsinki, Finland (Hetzner) (Pekka Jalonen)",
+        "server": "https://www.librespeed.fi/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "HTTP 503",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Helsinki, Finland (5) (Hetzner) (KABI.tk)",
+        "server": "https://fast.kabi.tk/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_TLS_CERT_ALTNAME_INVALID)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Frankfurt, Germany (FRA01) (LumischVPS)",
+        "server": "https://speedtest.lumischvps.cloud/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "Ping/CORS incompatible",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Johannesburg, South Africa (HOSTAFRICA)",
+        "server": "https://za1.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nottingham, England (LayerIP) (fosshost.org)",
+        "server": "https://uk1.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Ghom, Iran (Amin IDC) (Bardia Moshiri)",
+        "server": "https://fastme.ir/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "Ping/CORS incompatible",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nuremberg, Germany (1) (Hetzner) (Snopyta)",
+        "server": "https://de1.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nuremberg, Germany (2) (Hetzner) (LibreSpeed)",
+        "server": "https://de4.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nuremberg, Germany (3) (Hetzner) (LibreSpeed)",
+        "server": "https://de3.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nuremberg, Germany (6) (Hetzner) (luki9100)",
+        "server": "https://librespeed.lukas-heinrich.com/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Singapore (Salvatore Cahyo)",
+        "server": "https://speedtest.dsgroupmedia.com/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Nuremberg, Germany (4) (Hetzner) (LibreSpeed)",
+        "server": "https://de5.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Tehran, Iran (Fanava) (Bardia Moshiri)",
+        "server": "https://speedme.ir/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Serbia (Serbian Open eXchange)",
+        "server": "https://speedtest2.sox.rs/",
+        "dlURL": "libre/backend/garbage.php",
+        "ulURL": "libre/backend/empty.php",
+        "pingURL": "libre/backend/empty.php",
+        "getIpURL": "libre/backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (CERT_HAS_EXPIRED)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Tehran, Iran (Faraso) (Bardia Moshiri)",
+        "server": "https://st.bardia.tech/",
+        "dlURL": "backend/garbage.php",
+        "ulURL": "backend/empty.php",
+        "pingURL": "backend/empty.php",
+        "getIpURL": "backend/getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ENOTFOUND)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Virginia, United States, OVH (Riverside Rocks)",
+        "server": "https://speed.riverside.rocks/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (CERT_HAS_EXPIRED)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Vilnius, Lithuania (RackRay) (Time4VPS)",
+        "server": "https://lt1.backend.librespeed.org/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {},
+      "stage": "ping",
+      "error": "fetch failed (ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR)",
+      "previouslyConfigured": false
+    },
+    {
+      "server": {
+        "name": "Roma, Italy (Consortium GARR)",
+        "server": "https://st-be-rm2.infra.garr.it/",
+        "dlURL": "garbage.php",
+        "ulURL": "empty.php",
+        "pingURL": "empty.php",
+        "getIpURL": "getIP.php"
+      },
+      "checks": {
+        "ping": true,
+        "downloadBytes": 1048576,
+        "uploadPreflight": true
+      },
+      "stage": "upload",
+      "error": "Upload/CORS incompatible",
+      "previouslyConfigured": false
+    }
+  ]
+}

@@ -132,9 +132,14 @@ samples, 20 MiB upload blobs.
   Each entry: `name`, `server` (base URL ending in `/`), `dlURL`, `ulURL`,
   `pingURL`, `getIpURL` (paths relative to base; ping must return an empty body).
 - Source directories: `https://librespeed.org/backend-servers/servers.php`.
-- Refresh: `node scripts/refresh-servers.cjs` re-checks ping, small download,
-  upload, and CORS, then rewrites the snapshot. Results go to
-  `config/servers-verification.json`. Availability changes over time.
+- Refresh: `node scripts/refresh-servers.cjs` checks every configured server
+  first, then checks additional candidates from the source directories. Checks
+  include three empty ping responses, a small download, upload, CORS, and the
+  browser's upload preflight. Only passing servers enter the refreshed snapshot.
+  Detailed per-server results and directory failures go to
+  `config/servers-verification.json`, even if too few servers pass to safely
+  replace the snapshot. These are endpoint checks, not full throughput tests;
+  availability changes over time.
 - Add your own (including Philippine servers when available) by editing
   `config/servers.json`. Ookla servers are incompatible (different protocol).
   HTTPS pages require HTTPS backends; cross-origin backends need LibreSpeed CORS.
@@ -142,16 +147,79 @@ samples, 20 MiB upload blobs.
 
 ## 5. Run locally
 
+### Requirements
+
+- PHP 8.2 or newer, available as `php` in your terminal. On Windows, you can
+  install PHP separately or use XAMPP and add its PHP folder (usually
+  `C:\xampp\php`) to your `PATH`.
+- A modern browser and an internet connection to test against public servers.
+- Git only if cloning the repository. Node.js is optional, needed for the
+  maintenance and verification scripts, not to run the app.
+
+No database, Composer install, or npm install is required.
+
+### Windows (PowerShell)
+
+1. Download and extract the project, or clone it:
+
+   ```powershell
+   git clone https://github.com/charlesevangeliojr/bilis.git
+   cd bilis
+   ```
+
+   If you already have the project, open PowerShell in the project root—the
+   folder containing `run.ps1` and `router.php`.
+
+2. Confirm PHP is available, then start the server:
+
+   ```powershell
+   php --version
+   .\run.ps1
+   ```
+
+3. Open **http://127.0.0.1:8000** in your browser. Choose **Automatic** or a
+   public server and press **Start** to test your internet connection.
+
+Keep the terminal open while using Bilis. Press **Ctrl+C** to stop the server.
+Do not open `public/index.html` directly: the app needs the PHP settings API.
+
+If PowerShell blocks the script, run it with a temporary, process-only policy:
+
 ```powershell
-.\run.ps1
-# open http://localhost:8000
+powershell -NoProfile -ExecutionPolicy Bypass -File .\run.ps1
 ```
 
-- `.\run.ps1 -Port 8002` — use another port when 8000 is taken.
+If port 8000 is already in use:
+
+```powershell
+.\run.ps1 -Port 8002
+# Open http://127.0.0.1:8002
+```
+
+### macOS / Linux, or without the PowerShell script
+
+From the project root, with PHP installed:
+
+```sh
+php -d post_max_size=150M -d zlib.output_compression=Off -S 127.0.0.1:8000 router.php
+```
+
+Open **http://127.0.0.1:8000** and stop the server with **Ctrl+C** when finished.
+This command also works in a Windows terminal.
+
+### Troubleshooting and optional sharing
+
+- **`php` is not recognized / command not found:** install PHP or add its
+  executable folder to `PATH`, then reopen the terminal.
+- **Page will not load:** keep the server running, use the same port shown in
+  the terminal, and start it from the project root.
+- **Bilis server** measures your connection to this local PHP instance, not
+  your ISP speed. Use a public server for an internet speed test. PHP's built-in
+  server is for development, not production or accurate local benchmarking.
 - `.\run.ps1 -Tunnel` — also start a Cloudflare quick tunnel (demo sharing only;
   a tunnel measures the proxy, not ISP speed; forces `--protocol http2` because
-  QUIC/UDP is blocked on some networks).
-- Bare PHP: `php -S localhost:8000 router.php`.
+  QUIC/UDP is blocked on some networks). Requires `cloudflared`; on Windows,
+  install it with `winget install --id Cloudflare.cloudflared -e`.
 - `run.ps1:23` picks a writable temp dir, sets `post_max_size=150M`, and
   disables output compression. `router.php:5` safely maps `/` → `index.html`,
   serves static assets with correct content types, allows only the four
